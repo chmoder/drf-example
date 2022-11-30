@@ -36,6 +36,7 @@ jobs:
       id: apply
       run: terraform apply -no-color -auto-approve
   build-and-push:
+    needs: terraform
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
