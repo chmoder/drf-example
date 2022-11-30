@@ -80,5 +80,5 @@ jobs:
         credentials_json: '${{ secrets.TERRAFORM_ADMIN_SA_KEY }}'
     - uses: 'google-github-actions/deploy-cloudrun@v0'
       with:
-        image: '$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA'
+        image: "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA"
         service: 'drf_example'
