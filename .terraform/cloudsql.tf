@@ -5,9 +5,6 @@ resource "google_sql_database_instance" "drf_example" {
 
   settings {
     tier = "db-f1-micro"
-    ip_configuration {
-      ipv4_enabled = true
-    }
   }
 
   depends_on = [
