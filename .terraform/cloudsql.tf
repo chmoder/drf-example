@@ -8,4 +8,8 @@ resource "google_sql_database_instance" "drf_example" {
     # type. See argument reference below.
     tier = "db-e2-micro"
   }
+
+  depends_on = [
+    google_project_service.sqladmin_api
+  ]
 }
