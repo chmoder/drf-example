@@ -91,4 +91,4 @@ jobs:
           DATABASE_HOST=${{ secrets.DATABASE_HOST }}
           DATABASE_PORT=5432
           GS_BUCKET_NAME=${{ secrets.GS_BUCKET_NAME }}
-          DEBUG=False
+          DEBUG=True
