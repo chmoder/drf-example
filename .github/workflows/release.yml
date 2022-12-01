@@ -81,4 +81,4 @@ jobs:
     - uses: 'google-github-actions/deploy-cloudrun@v0'
       with:
         image: "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE }}:${{ github.sha }}"
-        service: 'drf_example'
+        service: 'drf-example'
