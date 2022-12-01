@@ -29,3 +29,12 @@ resource "google_project_service" "iamcredentials_api" {
     google_project_service.serviceusage_api
   ]
 }
+
+resource "google_project_service" "sqladmin_api" {
+  project = var.project_id
+  service = "sqladmin.googleapis.com"
+
+  depends_on = [
+    google_project_service.serviceusage_api
+  ]
+}
