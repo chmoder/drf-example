@@ -29,8 +29,9 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = [
-    'https://drf-example-6buxidnozq-uc.a.run.app',
-    'https://drf-example.chmoder.org'
+    # 'https://drf-example-6buxidnozq-uc.a.run.app',
+    # 'https://drf-example.chmoder.org'
+    '*'
 ]
 
 
