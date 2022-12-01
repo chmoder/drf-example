@@ -4,12 +4,17 @@ resource "google_sql_database_instance" "drf_example" {
   region           = "us-central1"
 
   settings {
-    # Second-generation instance tiers are based on the machine
-    # type. See argument reference below.
     tier = "db-f1-micro"
+    ip_configuration {
+      ipv4_enabled    = false
+      private_network = google_compute_network.vpc.id
+    }
   }
 
   depends_on = [
+    google_service_networking_connection.private_vpc_connection,
     google_project_service.sqladmin_api
   ]
 }
+
+
