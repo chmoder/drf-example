@@ -26,4 +26,6 @@ RUN poetry install --no-dev --no-interaction --no-ansi
 
 RUN chmod +x /app/entrypoint.sh
 
+EXPOSE 8080
+
 CMD ["sh", "/app/entrypoint.sh"]
