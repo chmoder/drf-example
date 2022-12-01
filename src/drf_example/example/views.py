@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from models import Quote
+from .models import Quote
 from rest_framework import viewsets
 from rest_framework import permissions
 from drf_example.example.serializers import UserSerializer, GroupSerializer, QuoteSerializer
