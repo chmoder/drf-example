@@ -6,7 +6,7 @@ resource "google_sql_database_instance" "drf_example" {
   settings {
     # Second-generation instance tiers are based on the machine
     # type. See argument reference below.
-    tier = "db-e2-micro"
+    tier = "db-f1-micro"
   }
 
   depends_on = [
