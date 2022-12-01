@@ -7,5 +7,5 @@ variable "project_id" {
 variable "network_name" {
   type        = string
   description = "Name of VPC network"
-  default     = "drf_example"
+  default     = "drf-example"
 }
