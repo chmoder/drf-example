@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('effective_date', models.DateField()),
                 ('age', models.IntegerField()),
                 ('gender', models.CharField(max_length=1)),
-                ('tobacco_status', models.BinaryField()),
+                ('tobacco_status', models.BooleanField()),
                 ('rate', models.DecimalField(decimal_places=2, max_digits=6)),
             ],
         ),

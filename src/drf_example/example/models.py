@@ -6,5 +6,5 @@ class Quote(models.Model):
     effective_date = models.DateField()
     age = models.IntegerField()
     gender = models.CharField(max_length=1)
-    tobacco_status = models.BinaryField()
+    tobacco_status = models.BooleanField(default=False)
     rate = models.DecimalField(max_digits=6, decimal_places=2)
