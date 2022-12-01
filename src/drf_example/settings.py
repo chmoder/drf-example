@@ -28,7 +28,10 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://drf-example-6buxidnozq-uc.a.run.app',
+    'https://drf-example.chmoder.org'
+]
 
 
 # Application definition
