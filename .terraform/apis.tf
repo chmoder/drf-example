@@ -47,3 +47,39 @@ resource "google_project_service" "compute_api" {
     google_project_service.serviceusage_api
   ]
 }
+
+resource "google_project_service" "run_api" {
+  project = var.project_id
+  service = "run.googleapis.com"
+
+  depends_on = [
+    google_project_service.serviceusage_api
+  ]
+}
+
+resource "google_project_service" "containerregistry_api" {
+  project = var.project_id
+  service = "containerregistry.googleapis.com"
+
+  depends_on = [
+    google_project_service.serviceusage_api
+  ]
+}
+
+resource "google_project_service" "cloudbuild_api" {
+  project = var.project_id
+  service = "cloudbuild.googleapis.com"
+
+  depends_on = [
+    google_project_service.serviceusage_api
+  ]
+}
+
+resource "google_project_service" "servicenetworking_api" {
+  project = var.project_id
+  service = "servicenetworking.googleapis.com"
+
+  depends_on = [
+    google_project_service.serviceusage_api
+  ]
+}
