@@ -38,3 +38,12 @@ resource "google_project_service" "sqladmin_api" {
     google_project_service.serviceusage_api
   ]
 }
+
+resource "google_project_service" "compute_api" {
+  project = var.project_id
+  service = "compute.googleapis.com"
+
+  depends_on = [
+    google_project_service.serviceusage_api
+  ]
+}
