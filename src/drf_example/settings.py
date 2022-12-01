@@ -45,7 +45,10 @@ if CLOUDRUN_SERVICE_URL:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 else:
     ALLOWED_HOSTS = ["*"]
-
+    CSRF_TRUSTED_ORIGINS = [
+        'https://drf-example-6buxidnozq-uc.a.run.app',
+        'https://drf-example.chmoder.org'
+    ]
 
 # Application definition
 
