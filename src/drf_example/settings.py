@@ -32,7 +32,8 @@ DEBUG = env('DEBUG')
 # running in production. The URL will be known once you first deploy
 # to Cloud Run. This code takes the URL and converts it to both these settings formats.
 CLOUDRUN_SERVICE_URL = env("CLOUDRUN_SERVICE_URL", default=None)
-print(CLOUDRUN_SERVICE_URL)
+print(os.environ)
+print(f'CLOUDRUN_SERVICE_URL: {CLOUDRUN_SERVICE_URL}')
 if CLOUDRUN_SERVICE_URL:
     ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc]
     CSRF_TRUSTED_ORIGINS = [
