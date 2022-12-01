@@ -32,23 +32,15 @@ DEBUG = env('DEBUG')
 # running in production. The URL will be known once you first deploy
 # to Cloud Run. This code takes the URL and converts it to both these settings formats.
 CLOUDRUN_SERVICE_URL = env("CLOUDRUN_SERVICE_URL", default=None)
-print(os.environ)
-print(f'CLOUDRUN_SERVICE_URL: {CLOUDRUN_SERVICE_URL}')
 if CLOUDRUN_SERVICE_URL:
     ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc]
     CSRF_TRUSTED_ORIGINS = [
-        CLOUDRUN_SERVICE_URL, 
-        'https://drf-example-6buxidnozq-uc.a.run.app',
-        'https://drf-example.chmoder.org'
+        CLOUDRUN_SERVICE_URL
     ]
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 else:
     ALLOWED_HOSTS = ["*"]
-    CSRF_TRUSTED_ORIGINS = [
-        'https://drf-example-6buxidnozq-uc.a.run.app',
-        'https://drf-example.chmoder.org'
-    ]
 
 # Application definition
 
