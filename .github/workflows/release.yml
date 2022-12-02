@@ -93,3 +93,32 @@ jobs:
           GS_BUCKET_NAME=${{ secrets.GS_BUCKET_NAME }}
           CLOUDRUN_SERVICE_URL=https://drf-example.chmoder.org
           DEBUG=True
+  deploy-angular:
+    needs: build-and-push-django
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: '${{ secrets.TERRAFORM_ADMIN_SA_KEY }}'
+
+      - name: Node $
+        uses: actions/setup-node@v1
+        with:
+          node-version: $
+
+      - name: npm install and npm run build
+        run: |
+          npm ci
+          npm run build:ci
+
+      - name: upload-files
+        uses: 'google-github-actions/upload-cloud-storage@v1'
+        with:
+          path: '/build/dist'
+          destination: 'chmoder-drf-example/app'
