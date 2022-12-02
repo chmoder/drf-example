@@ -1,0 +1,20 @@
+<div class="bread-crumb">
+        <div>    <span>View Added items</span>   </div>
+</div>
+<div class="container">
+    <div class="flex">
+            <div class="card c-hover" *ngFor="let product of productData_get">
+                    <H3>{{product.company_name}}</H3>
+                    <div>NAIC: {{product.naic}}</div>
+                    <div>price: ${{product.rate}}</div>
+                    <div>gender: {{product.gender == 'M' ? 'Male': 'Female'}}</div>
+                    <div>tobacco: {{product.tobacco_status == true ? 'True': 'False'}}</div>
+                    <div>effective date: {{product.effective_date | date}}</div>
+                    
+                    <div class="buttons">
+                        <a routerLink="edit/{{product.id}}"><button class="btn secondary" style="margin-left: 0;">Edit</button></a>
+                        <button (click)="deleteTheData(product.id)" class="btn danger">Delete</button>  
+                    </div>
+            </div>
+    </div>
+</div>

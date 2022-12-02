@@ -1,0 +1,45 @@
+<div class="bread-crumb">
+    <div>    <span>Search</span>   </div>
+</div>
+<div class="container flex">
+        <div class="form">
+            <h3>Search Quote</h3>
+            <form action="" [formGroup]="productForm" (ngSubmit)="postMyData()">
+                <table>
+                    <tr>
+                        <td>Age</td>
+                        <td>
+                            <input class="input" type="number" formControlName="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>
+                            <select class="input" name="" id="" formControlName="category">
+                                <option value="">select</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tobacco:</td>
+                        <td>
+                            <select class="input" name="" id="" formControlName="category">
+                                <option value="">select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="center">
+                                <button type="submit">submit</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+</div>

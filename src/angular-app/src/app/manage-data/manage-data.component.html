@@ -1,0 +1,45 @@
+<div class="bread-crumb">
+    <div>    
+        <span><a routerLink="/viewadded">View Added items</a></span>
+        <span style="color: white;">></span>
+        <span>Edit</span>
+    </div>
+</div>
+<div class="container flex">
+    <div class="form">
+        <form action="" [formGroup]="productForm" (ngSubmit)="searchQuotes()">
+            <table>
+                <tr>
+                    <td>Company Name:</td>
+                    <td>
+                        <input type="text" formControlName="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rate:</td>
+                    <td>
+                        <input type="text" formControlName="price">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <select name="" id="" formControlName="category">
+                            <option value="">select</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="2">
+                    <div class="center">
+                        <button type="submit">Update</button>
+                    </div>
+                    </td>
+                </tr> -->
+                
+            </table>
+        </form>
+    </div>
+</div>
