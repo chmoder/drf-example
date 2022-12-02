@@ -93,7 +93,7 @@ jobs:
           GS_BUCKET_NAME=${{ secrets.GS_BUCKET_NAME }}
           CLOUDRUN_SERVICE_URL=https://drf-example.chmoder.org
           DEBUG=True
-  deploy-angular:
+  build-and-deploy-angular:
     needs: deploy-django
     runs-on: ubuntu-latest
     defaults:
