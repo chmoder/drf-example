@@ -17,4 +17,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class QuoteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Quote
-        fields = ['company_name', 'naic', 'effective_date', 'age', 'gender', 'tobacco_status', 'rate']
+        fields = ['id', 'company_name', 'naic', 'effective_date', 'age', 'gender', 'tobacco_status', 'rate']
