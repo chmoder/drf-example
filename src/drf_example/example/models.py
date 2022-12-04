@@ -8,3 +8,8 @@ class Quote(models.Model):
     gender = models.CharField(max_length=1)
     tobacco_status = models.BooleanField(default=False)
     rate = models.DecimalField(max_digits=6, decimal_places=2)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['age', 'gender', 'tobacco_status']),
+        ]
