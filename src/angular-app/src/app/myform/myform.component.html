@@ -4,18 +4,18 @@
 <div class="container flex">
         <div class="form">
             <h3>Search Quote</h3>
-            <form action="" [formGroup]="productForm" (ngSubmit)="postMyData()">
+            <form action="" [formGroup]="productForm" (ngSubmit)="searchQuotes()">
                 <table>
                     <tr>
                         <td>Age</td>
                         <td>
-                            <input class="input" type="number" formControlName="name">
+                            <input class="input" type="number" formControlName="age">
                         </td>
                     </tr>
                     <tr>
                         <td>Gender:</td>
                         <td>
-                            <select class="input" name="" id="" formControlName="category">
+                            <select class="input" name="" id="" formControlName="gender">
                                 <option value="">select</option>
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
@@ -25,7 +25,7 @@
                     <tr>
                         <td>Tobacco:</td>
                         <td>
-                            <select class="input" name="" id="" formControlName="category">
+                            <select class="input" name="" id="" formControlName="tobacco_status">
                                 <option value="">select</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>

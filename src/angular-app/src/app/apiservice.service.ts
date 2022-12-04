@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
+
+
+type requestOptionsType = {
+  headers: HttpHeaders;
+  params?: HttpParams;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,12 +20,20 @@ export class ApiService {
     'Accept': 'application/json',
     'Authorization': 'Basic YWRtaW46cGFzc3dvcmQ='
   }
-  
-  requestOptions = {                                                                                                                                                                                 
-    headers: new HttpHeaders(this.headerDict), 
+
+  requestOptions: requestOptionsType = {                                                                                                                                                                            
+    headers: new HttpHeaders(this.headerDict),
   };
 
-  getData(url:string){
+  getData(url:string, searchCriteria?: object) {
+    this.requestOptions.params = new HttpParams();
+
+    if(searchCriteria && Object.keys(searchCriteria).length > 0) {
+      for (const [k, v] of Object.entries(searchCriteria)) {
+        this.requestOptions.params = this.requestOptions.params.set(k, v);
+      }
+    }
+
     return this.http.get(
       `${this.base_url}/${url}`,
       this.requestOptions

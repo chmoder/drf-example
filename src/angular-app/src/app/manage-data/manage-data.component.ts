@@ -36,12 +36,21 @@ export class ManageDataComponent implements OnInit {
                                 });
     });
   }
+
   dataToUpdate:any;   // variable to hold the updated data fro, form
   searchQuotes(){
-    this.dataToUpdate = this.productForm.value;
-    // calling updateData service.
-    this.http.updateData(`quotes/${this.id}/`,this.dataToUpdate).subscribe(data=>{
-      alert('Data updated');
-    });
+
+    this.router.navigate(
+      ['/viewadded'],
+      {
+        queryParams: this.productForm.value,
+      }
+    );
+
+    // this.dataToUpdate = this.productForm.value;
+    // // calling updateData service.
+    // this.http.updateData(`quotes/${this.id}/`,this.dataToUpdate).subscribe(data=>{
+    //   alert('Data updated');
+    // });
   }
 }

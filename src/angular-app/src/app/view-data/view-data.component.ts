@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../apiservice.service';
-import { Router } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'app-view-data',
@@ -9,15 +9,17 @@ import { Router } from '@angular/router'
 })
 export class ViewDataComponent implements OnInit {
 
-  constructor(private serv:ApiService,private router:Router) { }
+  constructor(private serv:ApiService,private router:Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getMyData(); // load data while the component is loaded everytime.
+    this.route.queryParams.subscribe(params => {
+      this.getMyData(params); // load data while the component is loaded everytime.
+    });
   }
   productData_get:any;  // the variable that serves the data to the template.
   // service to get data from the server
-  getMyData(){
-    this.serv.getData('quotes/').subscribe((data: any)=>{
+  getMyData(params?: object){
+    this.serv.getData('quotes/', params).subscribe((data: any)=>{
       this.productData_get = data.results;
     })
   }
