@@ -21,6 +21,11 @@ export class ViewDataComponent implements OnInit {
   getMyData(params?: object){
     this.serv.getData('quotes/', params).subscribe((data: any)=>{
       this.productData_get = data.results;
+      
+      let loadingObj = document.getElementById('loading');
+      if(loadingObj) {
+        loadingObj.style.display = 'none';
+      }
     })
   }
   // service to delete the product

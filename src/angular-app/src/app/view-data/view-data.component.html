@@ -2,6 +2,11 @@
         <div>    <span>View Added items</span>   </div>
 </div>
 <div class="container">
+        <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                        <span class="sr-only" id="loading"></span>
+                </div>
+        </div>
     <div class="flex">
             <div class="card c-hover" *ngFor="let product of productData_get">
                     <H3>{{product.company_name}}</H3>
