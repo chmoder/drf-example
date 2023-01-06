@@ -2,9 +2,9 @@
         <div>    <span>View Added items</span>   </div>
 </div>
 <div class="container">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" *ngIf="loadingAnimation">
                 <div class="spinner-border" role="status">
-                        <span class="sr-only" id="loading"></span>
+                        <span class="sr-only loadingAnimation"></span>
                 </div>
         </div>
     <div class="flex">
