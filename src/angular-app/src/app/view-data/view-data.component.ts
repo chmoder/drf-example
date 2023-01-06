@@ -8,24 +8,20 @@ import { ActivatedRoute, Router } from '@angular/router'
   styleUrls: ['./view-data.component.css']
 })
 export class ViewDataComponent implements OnInit {
-
-  constructor(private serv:ApiService,private router:Router, private route: ActivatedRoute) { }
+  constructor(private serv: ApiService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.getMyData(params); // load data while the component is loaded everytime.
     });
   }
-  productData_get:any;  // the variable that serves the data to the template.
+  loadingAnimation: boolean = true;
+  productData_get: any;  // the variable that serves the data to the template.
   // service to get data from the server
-  getMyData(params?: object){
-    this.serv.getData('quotes/', params).subscribe((data: any)=>{
+  getMyData(params?: object) {
+    this.serv.getData('quotes/', params).subscribe((data: any) => {
+      this.loadingAnimation = false;
       this.productData_get = data.results;
-      
-      let loadingObj = document.getElementById('loading');
-      if(loadingObj) {
-        loadingObj.style.display = 'none';
-      }
     })
   }
   // service to delete the product
