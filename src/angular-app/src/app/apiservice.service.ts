@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
+import { Observable } from 'rxjs';
 
 
 type requestOptionsType = {
@@ -18,14 +19,14 @@ export class ApiService {
   headerDict = {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'Authorization': 'Basic YWRtaW46cGFzc3dvcmQ='
+    'Authorization': 'Basic None'
   }
 
   requestOptions: requestOptionsType = {                                                                                                                                                                            
     headers: new HttpHeaders(this.headerDict),
   };
 
-  getData(url:string, searchCriteria?: object) {
+  getData(url: string, searchCriteria?: object): Observable<Object> {
     this.requestOptions.params = new HttpParams();
 
     if(searchCriteria && Object.keys(searchCriteria).length > 0) {
