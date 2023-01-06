@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../apiservice.service';
 import { ActivatedRoute,Router } from '@angular/router';
-import { FormGroup,FormControl } from '@angular/forms'
+import { UntypedFormGroup,UntypedFormControl } from '@angular/forms'
 
 @Component({
   selector: 'app-manage-data',
@@ -14,10 +14,10 @@ export class ManageDataComponent implements OnInit {
   id:any; // to store product_id
   product_data:any;  // variable that take form data
 
-  productForm = new FormGroup({
-    name : new FormControl(),
-    price : new FormControl(),
-    gender : new FormControl(),
+  productForm = new UntypedFormGroup({
+    name : new UntypedFormControl(),
+    price : new UntypedFormControl(),
+    gender : new UntypedFormControl(),
   });
 
 

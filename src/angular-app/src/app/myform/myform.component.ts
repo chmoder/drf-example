@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from'../apiservice.service';
-import { FormGroup,FormControl } from '@angular/forms';
+import { UntypedFormGroup,UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 
 export class MyformComponent implements OnInit {
   // a form for entering and validating data
-  productForm = new FormGroup({
-    age : new FormControl(),
-    gender : new FormControl(),
-    tobacco_status : new FormControl(),
+  productForm = new UntypedFormGroup({
+    age : new UntypedFormControl(),
+    gender : new UntypedFormControl(),
+    tobacco_status : new UntypedFormControl(),
   });
   
   constructor(private router:Router, private serv:ApiService) { }
