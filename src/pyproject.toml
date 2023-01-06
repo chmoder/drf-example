@@ -17,6 +17,8 @@ django-storages = "^1.13.1"
 google-cloud-storage = "^2.6.0"
 django-cors-headers = "^3.13.0"
 django-filter = "^22.1"
+djangorestframework-simplejwt = "^5.2.2"
+cryptography = "^39.0.0"
 
 
 [build-system]
