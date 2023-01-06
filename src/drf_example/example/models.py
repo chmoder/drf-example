@@ -10,6 +10,7 @@ class Quote(models.Model):
     rate = models.DecimalField(max_digits=6, decimal_places=2)
 
     class Meta:
+        ordering = ['-id']
         indexes = [
             models.Index(fields=['age', 'gender', 'tobacco_status']),
         ]
